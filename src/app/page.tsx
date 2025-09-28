@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Search, FileCode, Copy, Github, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Search, FileCode, Copy, Github } from 'lucide-react';
 
 export default function LandingPage() {
   return (
@@ -25,7 +25,7 @@ export default function LandingPage() {
             </Button>
             <Button asChild>
               <Link href="/dork">
-                Launch App <ArrowRight className="ml-2" />
+                Open Builder <ArrowRight className="ml-2" />
               </Link>
             </Button>
           </div>
