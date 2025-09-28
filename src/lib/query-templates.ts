@@ -26,9 +26,9 @@ export const queryTemplates: QueryTemplate[] = [
     query: 'parent directory DVDRip -xxx -html -htm -php -shtml -opendivx -md5 -md5sums',
   },
   {
-    title: "MP3 Audio",
-    description: "Look for MP3 files in open directories.",
-    query: 'parent directory MP3 -xxx -html -htm -php -shtml -opendivx -md5 -md5sums',
+    title: "MP3 Audio by Singer/Album",
+    description: "Look for MP3 files for a singer or album in open directories.",
+    query: 'parent directory "ARTIST_OR_ALBUM_NAME" -xxx -html -htm -php -shtml -opendivx -md5 -md5sums',
   },
   {
     title: "FTP Config Files",

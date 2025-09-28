@@ -15,7 +15,7 @@ export const dorkOperators: DorkOperator[] = [
   { name: 'site:', description: 'Search a specific site.', category: 'URL/Title' },
   { name: 'filetype:', description: 'Search for a specific filetype.', category: 'File' },
   { name: 'ext:', description: 'Alias for filetype.', category: 'File' },
-  { name: 'link:', description: 'Search for external links.', category: 'Advanced' },
+  { name: 'link:', description: 'Search for external links to pages.', category: 'Advanced' },
   { name: 'related:', description: 'List similar web pages.', category: 'Advanced' },
   { name: 'cache:', description: "Show Google's cached version.", category: 'Advanced' },
   { name: 'before:', description: 'Search before a date.', category: 'Advanced' },
