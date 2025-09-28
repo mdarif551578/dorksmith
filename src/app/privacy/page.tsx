@@ -37,7 +37,7 @@ export default function PrivacyPolicyPage() {
             <div className="prose prose-lg max-w-none text-muted-foreground">
               <p>
                 Your privacy is important to us. It is Dorksmith's policy to respect your privacy regarding any information we may collect from you across our website,{' '}
-                <Link href="/">https://dorksmith.com</Link>, and other sites we own and operate.
+                <Link href="/">https://dorksmith.pages.dev</Link>, and other sites we own and operate.
               </p>
               <p>
                 We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.

@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dorksmith.com/sitemap.xml
+Sitemap: https://dorksmith.pages.dev/sitemap.xml

@@ -38,7 +38,7 @@ export default function TermsOfServicePage() {
               <h2 className="text-2xl font-bold">1. Terms</h2>
               <p>
                 By accessing the website at{' '}
-                <Link href="/">https://dorksmith.com</Link>, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.
+                <Link href="/">https://dorksmith.pages.dev</Link>, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.
               </p>
               <h2 className="text-2xl font-bold mt-6">2. Use License</h2>
               <p>

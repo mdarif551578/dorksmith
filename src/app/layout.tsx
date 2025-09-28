@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from '@/components/ui/tooltip';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dorksmith.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dorksmith.pages.dev';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
