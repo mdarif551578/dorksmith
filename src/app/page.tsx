@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Search, FileCode, Copy, Github, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Search, FileCode, Copy, Github, ShieldCheck, BookOpen, Palette } from 'lucide-react';
 
 export default function LandingPage() {
   return (
@@ -84,6 +84,21 @@ export default function LandingPage() {
                 icon={<Copy className="h-10 w-10 text-primary" />}
                 title="Instant Preview & Actions"
                 description="Instantly preview the generated search URL, copy it to your clipboard, or open it directly in a new tab."
+              />
+              <FeatureCard
+                icon={<Palette className="h-10 w-10 text-primary" />}
+                title="Operator Palette"
+                description="Discover and apply Google Dork operators via an organized, categorized palette, enhancing learnability."
+              />
+              <FeatureCard
+                icon={<BookOpen className="h-10 w-10 text-primary" />}
+                title="Learning-Focused Design"
+                description="Dorksmith is designed to be an educational tool, helping you understand and master advanced search techniques."
+              />
+              <FeatureCard
+                icon={<ShieldCheck className="h-10 w-10 text-primary" />}
+                title="Ethical Use Reminders"
+                description="Built-in reminders and resources to promote the responsible and legal use of dorking techniques."
               />
             </div>
           </div>
