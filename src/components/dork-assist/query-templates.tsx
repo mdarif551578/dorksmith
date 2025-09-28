@@ -1,3 +1,4 @@
+
 "use client";
 
 import { queryTemplates } from "@/lib/query-templates";
@@ -18,8 +19,7 @@ interface QueryTemplatesProps {
 
 export function QueryTemplates({ onSelectTemplate }: QueryTemplatesProps) {
   return (
-    <div className="flex flex-col gap-4 mt-6">
-      <h2 className="text-lg font-semibold">Query Templates</h2>
+    <div className="flex flex-col gap-4">
       <div className="grid gap-4 md:grid-cols-1">
         {queryTemplates.map((template) => (
           <Card key={template.title} className="flex flex-col">

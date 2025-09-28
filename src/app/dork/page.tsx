@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -9,25 +10,21 @@ import { QueryTemplates } from "@/components/dork-assist/query-templates";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { SlidersHorizontal, ListChecks } from "lucide-react";
 
 export default function DorkPage() {
   const [query, setQuery] = useState("");
-  const [activeTab, setActiveTab] = useState("builder");
   const isMobile = useIsMobile();
+  const [activeTab, setActiveTab] = useState("builder");
 
   const handleBadgeClick = (operator: string) => {
     const newQuery = `${query} ${operator}`.trim();
     setQuery(newQuery);
-    if (isMobile) {
-      setActiveTab("builder");
-    }
   };
 
   const handleSelectTemplate = (templateQuery: string) => {
     setQuery(templateQuery);
-    if (isMobile) {
-      setActiveTab("builder");
-    }
   };
 
   if (isMobile === undefined) {
@@ -41,17 +38,32 @@ export default function DorkPage() {
   if (isMobile) {
     return (
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full flex flex-col h-full">
-        <TabsList className="grid w-full grid-cols-3 mx-auto max-w-sm sticky top-0 bg-background/95 z-10">
-          <TabsTrigger value="tools">Tools</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-2 mx-auto max-w-sm sticky top-0 bg-background/95 z-10">
           <TabsTrigger value="builder">Builder</TabsTrigger>
           <TabsTrigger value="preview">Preview</TabsTrigger>
         </TabsList>
-        <TabsContent value="tools" className="flex-grow overflow-auto p-4">
-          <BadgePalette onBadgeClick={handleBadgeClick} />
-          <QueryTemplates onSelectTemplate={handleSelectTemplate} />
-        </TabsContent>
-        <TabsContent value="builder" className="flex-grow p-4">
-          <QueryBuilder query={query} setQuery={setQuery} />
+        <TabsContent value="builder" className="flex-grow overflow-auto p-4">
+          <div className="flex flex-col gap-4 h-full">
+            <QueryBuilder query={query} setQuery={setQuery} />
+            <Accordion type="multiple" className="w-full">
+              <AccordionItem value="operators">
+                <AccordionTrigger className="text-md font-medium hover:no-underline">
+                  <SlidersHorizontal className="mr-2" /> Operator Palette
+                </AccordionTrigger>
+                <AccordionContent>
+                  <BadgePalette onBadgeClick={handleBadgeClick} />
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="templates">
+                <AccordionTrigger className="text-md font-medium hover:no-underline">
+                  <ListChecks className="mr-2" /> Query Templates
+                </AccordionTrigger>
+                <AccordionContent>
+                  <QueryTemplates onSelectTemplate={handleSelectTemplate} />
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
         </TabsContent>
         <TabsContent value="preview" className="flex-grow overflow-auto p-4">
           <QueryPreview query={query} />
