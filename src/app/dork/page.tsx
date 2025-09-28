@@ -49,7 +49,7 @@ export default function DorkPage() {
         <TabsContent value="builder" className="flex-grow overflow-auto p-4">
           <div className="flex flex-col gap-4 h-full">
             <QueryBuilder query={query} setQuery={setQuery} />
-            <Accordion type="multiple" className="w-full">
+            <Accordion type="multiple" defaultValue={["operators"]} className="w-full">
               <AccordionItem value="operators">
                 <AccordionTrigger className="text-md font-medium hover:no-underline">
                   <SlidersHorizontal className="mr-2" /> Operator Palette
