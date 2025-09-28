@@ -30,7 +30,7 @@ To get a local copy up and running, follow these simple steps.
    ```
 2. Navigate to the project directory
    ```sh
-   cd nextjs-dork-assistant
+   cd dorksmith
    ```
 3. Install NPM packages
    ```sh
@@ -50,4 +50,3 @@ Open [http://localhost:9002](http://localhost:9002) with your browser to see the
 ## Disclaimer
 
 Dorksmith is a tool created for educational and research purposes only. Google Dorking can unintentionally access sensitive information. Users are responsible for their own actions and must comply with all applicable laws. Always respect privacy and do not attempt to access systems without authorization.
-
