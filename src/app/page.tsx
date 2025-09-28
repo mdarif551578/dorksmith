@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Search, FileCode, Copy, Github } from 'lucide-react';
+import { ArrowRight, Search, FileCode, Copy, Github, ShieldCheck } from 'lucide-react';
 
 export default function LandingPage() {
   return (
@@ -88,6 +88,66 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
+        <section id="how-it-works" className="py-20 lg:py-28">
+          <div className="container mx-auto">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">How It Works</h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Crafting the perfect dork query is simple with our three-step process.
+              </p>
+            </div>
+            <div className="mt-16 grid gap-12 md:grid-cols-3">
+              <HowItWorksStep
+                step="1"
+                title="Build or Select"
+                description="Use the intuitive Query Builder to construct a search from scratch or choose a pre-made template to get started instantly."
+              />
+              <HowItWorksStep
+                step="2"
+                title="Refine with Operators"
+                description="Browse the Operator Palette to discover and add powerful Google Dork operators to narrow down and refine your search."
+              />
+              <HowItWorksStep
+                step="3"
+                title="Preview and Search"
+                description="Instantly see the generated search URL. Copy it to your clipboard or open it directly in a new tab to see the results."
+              />
+            </div>
+          </div>
+        </section>
+
+        <section id="ethical-use" className="bg-muted py-20 lg:py-28">
+          <div className="container mx-auto">
+            <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+              <ShieldCheck className="h-16 w-16 text-primary" />
+              <h2 className="mt-6 text-4xl font-bold tracking-tighter sm:text-5xl">A Tool for Ethical Use</h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                Dorksmith is designed for educational and security research purposes only. The power of Google Dorking comes with a responsibility to respect privacy and use information ethically. Never attempt to access systems without authorization. All users must comply with applicable laws.
+              </p>
+              <Button asChild variant="link" className="mt-4 text-lg">
+                <Link href="/terms">Read our Terms of Service &rarr;</Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+        
+        <section id="cta" className="py-20 lg:py-28">
+          <div className="container mx-auto text-center">
+             <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl">Ready to Dive In?</h2>
+             <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+              Unleash the full potential of Google Search. Start building powerful and precise queries with Dorksmith today.
+             </p>
+             <div className="mt-8">
+              <Button asChild size="lg" className="text-lg py-7 px-8">
+                <Link href="/dork">
+                  Open Query Builder <ArrowRight className="ml-2" />
+                </Link>
+              </Button>
+             </div>
+          </div>
+        </section>
+
       </main>
 
       <footer className="border-t py-8">
@@ -116,5 +176,17 @@ function FeatureCard({ icon, title, description }: { icon: React.ReactNode, titl
         <p className="text-muted-foreground">{description}</p>
       </CardContent>
     </Card>
+  );
+}
+
+function HowItWorksStep({ step, title, description }: { step: string, title: string, description: string }) {
+  return (
+    <div className="flex flex-col items-center text-center">
+      <div className="flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary bg-primary/10 text-2xl font-bold text-primary">
+        {step}
+      </div>
+      <h3 className="mt-6 text-2xl font-bold">{title}</h3>
+      <p className="mt-2 text-muted-foreground">{description}</p>
+    </div>
   );
 }
