@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Search, ShieldCheck, FileCode, Copy, Github } from 'lucide-react';
+import { ArrowRight, Search, FileCode, Copy, Github } from 'lucide-react';
 
 export default function LandingPage() {
   return (
@@ -69,7 +69,7 @@ export default function LandingPage() {
                 Everything you need for responsible and powerful security research, right at your fingertips.
               </p>
             </div>
-            <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               <FeatureCard
                 icon={<Search className="h-10 w-10 text-primary" />}
                 title="Intuitive Query Builder"
@@ -79,11 +79,6 @@ export default function LandingPage() {
                 icon={<FileCode className="h-10 w-10 text-primary" />}
                 title="Query Templates"
                 description="Leverage pre-made templates for common searches, a great tool for learning and starting new queries."
-              />
-              <FeatureCard
-                icon={<ShieldCheck className="h-10 w-10 text-primary" />}
-                title="Ethical Use AI Tool"
-                description="Evaluate queries for ethical issues and get alerts about the implications of Google Dorking."
               />
               <FeatureCard
                 icon={<Copy className="h-10 w-10 text-primary" />}
