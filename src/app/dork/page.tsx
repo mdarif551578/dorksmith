@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from "react";
@@ -19,12 +18,17 @@ export default function DorkPage() {
   const [activeTab, setActiveTab] = useState("builder");
 
   const handleBadgeClick = (operator: string) => {
-    const newQuery = `${query} ${operator}`.trim();
+    // Add a space only if the query is not empty and doesn't already end with a space
+    const separator = query && !query.endsWith(' ') ? ' ' : '';
+    const newQuery = `${query}${separator}${operator}`;
     setQuery(newQuery);
   };
 
   const handleSelectTemplate = (templateQuery: string) => {
     setQuery(templateQuery);
+    if(isMobile) {
+      setActiveTab("builder");
+    }
   };
 
   if (isMobile === undefined) {
@@ -76,8 +80,25 @@ export default function DorkPage() {
     <ResizablePanelGroup direction="horizontal" className="h-full w-full">
       <ResizablePanel defaultSize={25} minSize={20} maxSize={35}>
         <ScrollArea className="h-full p-6">
-          <BadgePalette onBadgeClick={handleBadgeClick} />
-          <QueryTemplates onSelectTemplate={handleSelectTemplate} />
+          <h2 className="text-lg font-semibold mb-4">Templates & Operators</h2>
+          <Accordion type="multiple" defaultValue={["operators", "templates"]} className="w-full">
+            <AccordionItem value="operators">
+              <AccordionTrigger className="text-md font-medium hover:no-underline">
+                <SlidersHorizontal className="mr-2" /> Operator Palette
+              </AccordionTrigger>
+              <AccordionContent>
+                <BadgePalette onBadgeClick={handleBadgeClick} />
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="templates">
+              <AccordionTrigger className="text-md font-medium hover:no-underline">
+                <ListChecks className="mr-2" /> Query Templates
+              </AccordionTrigger>
+              <AccordionContent>
+                <QueryTemplates onSelectTemplate={handleSelectTemplate} />
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </ScrollArea>
       </ResizablePanel>
       <ResizableHandle withHandle />
