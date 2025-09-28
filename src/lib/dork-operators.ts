@@ -1,0 +1,36 @@
+export interface DorkOperator {
+  name: string;
+  description: string;
+  category: 'Content' | 'URL/Title' | 'File' | 'Advanced' | 'Logical';
+}
+
+export const dorkOperators: DorkOperator[] = [
+  { name: 'allintext:', description: 'Occurrences of all keywords.', category: 'Content' },
+  { name: 'intext:', description: 'Occurrences of keywords.', category: 'Content' },
+  { name: '""', description: 'Exact phrase match.', category: 'Content' },
+  { name: 'inurl:', description: 'URL matching one of the keywords.', category: 'URL/Title' },
+  { name: 'allinurl:', description: 'URL matching all keywords.', category: 'URL/Title' },
+  { name: 'intitle:', description: 'Keywords in title.', category: 'URL/Title' },
+  { name: 'allintitle:', description: 'All keywords in title.', category: 'URL/Title' },
+  { name: 'site:', description: 'Search a specific site.', category: 'URL/Title' },
+  { name: 'filetype:', description: 'Search for a specific filetype.', category: 'File' },
+  { name: 'ext:', description: 'Alias for filetype.', category: 'File' },
+  { name: 'link:', description: 'Search for external links.', category: 'Advanced' },
+  { name: 'related:', description: 'List similar web pages.', category: 'Advanced' },
+  { name: 'cache:', description: "Show Google's cached version.", category: 'Advanced' },
+  { name: 'before:', description: 'Search before a date.', category: 'Advanced' },
+  { name: 'after:', description: 'Search after a date.', category: 'Advanced' },
+  { name: 'numrange:', description: 'Locate specific numbers.', category: 'Advanced' },
+  { name: 'inanchor:', description: 'Keywords in link anchor text.', category: 'Advanced' },
+  { name: 'allinanchor:', description: 'All keywords in link anchor text.', category: 'Advanced' },
+  { name: 'inpostauthor:', description: 'Blog posts by a specific author.', category: 'Advanced' },
+  { name: 'allinpostauthor:', description: 'All keywords in blog post author.', category: 'Advanced' },
+  { name: '~', description: 'Include synonyms.', category: 'Advanced' },
+  { name: 'OR', description: 'Logical OR.', category: 'Logical' },
+  { name: '|', description: 'Logical OR.', category: 'Logical' },
+  { name: 'AND', description: 'Logical AND.', category: 'Logical' },
+  { name: '&', description: 'Logical AND.', category: 'Logical' },
+  { name: '-', description: 'Exclude a term.', category: 'Logical' },
+  { name: '+', description: 'Include a term.', category: 'Logical' },
+  { name: '*', description: 'Wildcard.', category: 'Logical' },
+];
