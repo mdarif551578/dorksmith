@@ -31,18 +31,18 @@ export default function Home() {
     }
   };
 
-  const DesktopLayout = () => (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 h-full p-6">
-      <div className="lg:col-span-4 xl:col-span-3">
+  const FullLayout = () => (
+    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-full p-6">
+      <div className="md:col-span-5 lg:col-span-4 xl:col-span-3">
         <ScrollArea className="h-full pr-4">
           <BadgePalette onBadgeClick={handleBadgeClick} />
           <QueryTemplates onSelectTemplate={handleSelectTemplate} />
         </ScrollArea>
       </div>
-      <div className="lg:col-span-4 xl:col-span-5">
+      <div className="md:col-span-7 lg:col-span-4 xl:col-span-5">
         <QueryBuilder query={query} setQuery={setQuery} />
       </div>
-      <div className="lg:col-span-4">
+      <div className="lg:col-span-4 hidden lg:block">
         <ScrollArea className="h-full pr-4">
           <QueryPreview query={query} />
         </ScrollArea>
@@ -91,7 +91,7 @@ export default function Home() {
         ) : isMobile ? (
           <MobileLayout />
         ) : (
-          <DesktopLayout />
+          <FullLayout />
         )}
       </main>
     </div>
