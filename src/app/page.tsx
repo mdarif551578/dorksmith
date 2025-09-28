@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ArrowRight, Search, FileCode, Copy, Github } from 'lucide-react';
+import { ArrowRight, Search, FileCode, Copy, Github, ShieldCheck } from 'lucide-react';
 
 export default function LandingPage() {
   return (
@@ -39,7 +39,7 @@ export default function LandingPage() {
               Master Advanced Search
             </h1>
             <p className="max-w-4xl text-lg text-muted-foreground md:text-xl lg:text-2xl">
-              Visually construct complex Google Dork queries, discover operators, and leverage templates to master advanced search techniques responsibly.
+              Visually construct complex Google Dork queries, discover powerful operators, and leverage templates to master advanced search techniques for security research and data discovery.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="text-lg py-7 px-8">
@@ -77,13 +77,13 @@ export default function LandingPage() {
               />
               <FeatureCard
                 icon={<FileCode className="h-10 w-10 text-primary" />}
-                title="Query Templates"
-                description="Leverage pre-made templates for common searches, a great tool for learning and starting new queries."
+                title="Comprehensive Templates"
+                description="Leverage a vast library of pre-made templates for common searches, perfect for learning and starting new investigations."
               />
               <FeatureCard
                 icon={<Copy className="h-10 w-10 text-primary" />}
                 title="Instant Preview & Actions"
-                description="Instantly preview the generated search URL, copy it, or open it directly in a new tab."
+                description="Instantly preview the generated search URL, copy it to your clipboard, or open it directly in a new tab."
               />
             </div>
           </div>
@@ -91,9 +91,12 @@ export default function LandingPage() {
       </main>
 
       <footer className="border-t py-8">
-        <div className="container mx-auto text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Dorksmith. A tool for ethical and responsible use.
-          </p>
+        <div className="container mx-auto px-4 md:px-6 flex flex-col sm:flex-row justify-between items-center text-sm text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} Dorksmith. A tool for ethical and responsible use.</p>
+          <div className="flex gap-4 mt-4 sm:mt-0">
+            <Link href="/privacy" className="hover:text-primary">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-primary">Terms of Service</Link>
+          </div>
         </div>
       </footer>
     </div>
