@@ -1,7 +1,8 @@
+
 export interface DorkOperator {
   name: string;
   description: string;
-  category: 'Content' | 'URL/Title' | 'File' | 'Advanced' | 'Logical';
+  category: 'Content' | 'URL/Title' | 'File' | 'Advanced' | 'Logical' | 'Groups';
 }
 
 export const dorkOperators: DorkOperator[] = [
@@ -13,24 +14,46 @@ export const dorkOperators: DorkOperator[] = [
   { name: 'intitle:', description: 'Keywords in title.', category: 'URL/Title' },
   { name: 'allintitle:', description: 'All keywords in title.', category: 'URL/Title' },
   { name: 'site:', description: 'Search a specific site.', category: 'URL/Title' },
-  { name: 'filetype:', description: 'Search for a specific filetype.', category: 'File' },
+  { name: 'filetype:pdf', description: 'Search for PDF files.', category: 'File' },
+  { name: 'filetype:doc', description: 'Search for Word documents.', category: 'File' },
+  { name: 'filetype:docx', description: 'Search for Word documents.', category: 'File' },
+  { name: 'filetype:xls', description: 'Search for Excel spreadsheets.', category: 'File' },
+  { name: 'filetype:xlsx', description: 'Search for Excel spreadsheets.', category: 'File' },
+  { name: 'filetype:ppt', description: 'Search for PowerPoint presentations.', category: 'File' },
+  { name: 'filetype:pptx', description: 'Search for PowerPoint presentations.', category: 'File' },
+  { name: 'filetype:txt', description: 'Search for plain text files.', category: 'File' },
+  { name: 'filetype:log', description: 'Search for log files.', category: 'File' },
+  { name: 'filetype:csv', description: 'Search for CSV files.', category: 'File' },
+  { name: 'filetype:xml', description: 'Search for XML files.', category: 'File' },
+  { name: 'filetype:json', description: 'Search for JSON files.', category: 'File' },
+  { name: 'filetype:sql', description: 'Search for SQL files.', category: 'File' },
+  { name: 'filetype:env', description: 'Search for environment configuration files.', category: 'File' },
+  { name: 'filetype:config', description: 'Search for configuration files.', category: 'File' },
+  { name: 'filetype:conf', description: 'Search for configuration files.', category: 'File' },
+  { name: 'filetype:cfg', description: 'Search for configuration files.', category: 'File' },
   { name: 'ext:', description: 'Alias for filetype.', category: 'File' },
   { name: 'link:', description: 'Search for external links to pages.', category: 'Advanced' },
   { name: 'related:', description: 'List similar web pages.', category: 'Advanced' },
   { name: 'cache:', description: "Show Google's cached version.", category: 'Advanced' },
   { name: 'before:', description: 'Search before a date.', category: 'Advanced' },
   { name: 'after:', description: 'Search after a date.', category: 'Advanced' },
+  { name: 'daterange:', description: 'Search within a date range.', category: 'Advanced' },
   { name: 'numrange:', description: 'Locate specific numbers.', category: 'Advanced' },
   { name: 'inanchor:', description: 'Keywords in link anchor text.', category: 'Advanced' },
   { name: 'allinanchor:', description: 'All keywords in link anchor text.', category: 'Advanced' },
   { name: 'inpostauthor:', description: 'Blog posts by a specific author.', category: 'Advanced' },
   { name: 'allinpostauthor:', description: 'All keywords in blog post author.', category: 'Advanced' },
   { name: '~', description: 'Include synonyms.', category: 'Advanced' },
+  { name: 'author:', description: 'Search for a specific author in Google Groups.', category: 'Groups' },
+  { name: 'group:', description: 'Search for a specific group name in Google Groups.', category: 'Groups' },
+  { name: 'insubject:', description: 'Search for keywords in the subject of a Google Groups post.', category: 'Groups' },
+  { name: 'msgid:', description: 'Search for a specific message ID in Google Groups.', category: 'Groups' },
   { name: 'OR', description: 'Logical OR.', category: 'Logical' },
   { name: '|', description: 'Logical OR.', category: 'Logical' },
   { name: 'AND', description: 'Logical AND.', category: 'Logical' },
   { name: '&', description: 'Logical AND.', category: 'Logical' },
   { name: '-', description: 'Exclude a term.', category: 'Logical' },
-  { name: '+', description: 'Include a term.', category: 'Logical' },
-  { name: '*', description: 'Wildcard.', category: 'Logical' },
+  { name: '+', description: 'Force include a term.', category: 'Logical' },
+  { name: '*', description: 'Wildcard for a single word.', category: 'Logical' },
+  { name: '.', description: 'Single-character wildcard.', category: 'Logical' },
 ];
