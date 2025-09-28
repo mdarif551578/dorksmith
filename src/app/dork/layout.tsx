@@ -18,7 +18,7 @@ export default function DorkLayout({
         </div>
         <Button variant="ghost" size="icon" asChild>
           <a
-            href="https://github.com/firebase/genkit-patterns/tree/main/nextjs-dork-assistant"
+            href="https://github.com/mdarif551578/dorksmith"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View source on GitHub"

@@ -26,7 +26,7 @@ To get a local copy up and running, follow these simple steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/firebase/genkit-patterns/tree/main/nextjs-dork-assistant
+   git clone https://github.com/mdarif551578/dorksmith
    ```
 2. Navigate to the project directory
    ```sh
