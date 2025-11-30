@@ -77,6 +77,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <meta name="google-site-verification" content="yFGdP65i916oCwom1sHrhTkBfRrIvS040hjnfiFm_6Y" />
       </head>
       <body className={cn("font-body antialiased", "min-h-screen bg-background")}>
         <TooltipProvider>
